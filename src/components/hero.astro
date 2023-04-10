@@ -1,0 +1,48 @@
+---
+import { Picture } from "@astrojs/image/components";
+import heroImage from "assets/window_panes.jpg";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<main
+  class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24">
+  <div>
+    <h1 class="text-4xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Welcome to my Online
+    </h1>
+    <h1 class="text-4xl font-bold lg:tracking-tight xl:tracking-tighter">
+      <span class="font-bold text-slate-800">Developer</span>
+      <span class="text-slate-500">Portfolio</span>
+    </h1>
+    <p class="text-lg mt-4 text-slate-600 max-w-xl">
+      My name is Oscar Cisneros. I am currently pursuing a Bachelor's degree in
+      computer science at Cal State Fullerton (CSUF), on pace to graduate in
+      2024, with the primary focus of developing as a software engineer. Check
+      out my work in the Projects section, or for a closer look into my
+      developer adventures, check out the Blog section.
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <Link
+        size="lg"
+        rel="noopener"
+        href="https://github.com/oscisn93"
+        class="flex gap-1 items-center justify-center"
+        target="_blank">
+        {"Check out my code ->"}
+        <Icon class="text-slate-100 w-6 h-6" name="bx:bxl-github" />
+      </Link>
+    </div>
+  </div>
+  <div class="py-6 px-4 md:order-0 hidden md:block">
+    <Picture
+      src={heroImage}
+      alt="windowpane-corridor"
+      widths={[200, 400, 600]}
+      aspectRatio="4:3"
+      sizes="(max-width: 800px) 100vw, 620px"
+      loading="eager"
+      format="avif"
+    />
+  </div>
+</main>

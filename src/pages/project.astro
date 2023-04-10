@@ -1,0 +1,124 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import Pricing from "@components/pricing.astro";
+
+const projects = [
+  {
+    name: "Focal",
+    price: "Productivity",
+    popular: true,
+    features: [
+      "Schedule calendar",
+      "Project Tracking",
+      "Pomodoro Timer",
+      "User Dashboard",
+      "Google Oauth Integration",
+      "Open Source",
+    ],
+    button: {
+      text: "Demo",
+      link: "/project",
+    },
+  },
+  {
+    name: "Focal",
+    price: "Productivity",
+    popular: true,
+    features: [
+      "Schedule calendar",
+      "Project Tracking",
+      "Pomodoro Timer",
+      "User Dashboard",
+      "Google Oauth Integration",
+      "Open Source",
+    ],
+    button: {
+      text: "Demo",
+      link: "/project",
+    },
+  },
+  {
+    name: "Focal",
+    price: "Productivity",
+    popular: false,
+    features: [
+      "Schedule calendar",
+      "Project Tracking",
+      "Pomodoro Timer",
+      "User Dashboard",
+      "Google Oauth Integration",
+      "Open Source",
+    ],
+    button: {
+      text: "Demo",
+      link: "/project",
+    },
+  },
+  {
+    name: "Focal",
+    price: "Productivity",
+    popular: false,
+    features: [
+      "Schedule calendar",
+      "Project Tracking",
+      "Pomodoro Timer",
+      "User Dashboard",
+      "Google Oauth Integration",
+      "Open Source",
+    ],
+    button: {
+      text: "Demo",
+      link: "/project",
+    },
+  },
+  {
+    name: "Focal",
+    price: "Productivity",
+    popular: false,
+    features: [
+      "Schedule calendar",
+      "Project Tracking",
+      "Pomodoro Timer",
+      "User Dashboard",
+      "Google Oauth Integration",
+      "Open Source",
+    ],
+    button: {
+      text: "Demo",
+      link: "/project",
+    },
+  },
+  {
+    name: "Focal",
+    price: "Productivity",
+    popular: false,
+    features: [
+      "Schedule calendar",
+      "Project Tracking",
+      "Pomodoro Timer",
+      "User Dashboard",
+      "Google Oauth Integration",
+      "Open Source",
+    ],
+    button: {
+      text: "Demo",
+      link: "/project",
+    },
+  },
+];
+---
+
+<Layout title="Projects">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Projects</Fragment>
+      <Fragment slot="desc">Some of my best work so far.</Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-3 gap-10 mx-auto max-w-screen-lg mt-12">
+      {projects.map((item) => <Pricing plan={item} />)}
+    </div>
+  </Container>
+</Layout>
