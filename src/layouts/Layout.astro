@@ -17,9 +17,7 @@ const resolvedImageWithDomain = new URL(
 
 const { title } = Astro.props;
 
-const makeTitle = title
-  ? title
-  : "Oscar\'s Dev Blog";
+const makeTitle = title ? title : "Oscar's Dev Blog";
 ---
 
 <!DOCTYPE html>
@@ -62,6 +60,22 @@ const makeTitle = title
       /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
       img {
         content-visibility: auto;
+      }
+      body {
+        background-color: #202222;
+        background-image: linear-gradient(
+          90deg,
+          #000,
+          #000,
+          #111,
+          #000,
+          #000,
+          #111,
+          #000,
+          #000
+        );
+        color: #fff;
+        font-weight: 700;
       }
     </style>
   </body>

@@ -1,6 +1,5 @@
 ---
 import Container from "@components/container.astro";
-import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
@@ -12,14 +11,14 @@ const menuitems = [
     title: "About",
     path: "/about",
   },
-  {
-    title: "Blog",
-    path: "/blog",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
+  // {
+  //   title: "Blog",
+  //   path: "/blog",
+  // },
+  // {
+  //   title: "Contact",
+  //   path: "/contact",
+  // },
 ];
 ---
 
@@ -28,8 +27,9 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg">
-          <span class="font-bold text-slate-800">Oscar</span>
-          <span class="text-slate-500">Cisneros</span>
+          <span class="font-bold text-4xl"
+            >Big<span class="font-extrabold text-slate-400">O</span></span
+          >
         </a>
         <div class="block lg:hidden">
           <MenuIcon class="w-4 h-4 text-gray-800" />
@@ -42,7 +42,7 @@ const menuitems = [
               <li>
                 <a
                   href={item.path}
-                  class="flex lg:px-3 py-2 text-gray-600 hover:text-gray-900">
+                  class="flex lg:px-3 py-2 text-gray-400 font-semibold hover:text-white">
                   {item.title}
                 </a>
               </li>
