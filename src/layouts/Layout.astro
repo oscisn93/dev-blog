@@ -31,22 +31,22 @@ const makeTitle = title ? title : "Oscar's Dev Blog";
     <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
     <SEO
       title={makeTitle}
-      description="Astroship is a starter website template for Astro built with TailwindCSS."
+      description="Welcome to my blog!"
       canonical={canonicalURL}
       twitter={{
-        creator: "@surjithctly",
-        site: "@web3templates",
+        creator: "@oscarotero",
+        site: "@oscarcisneros.dev",
         card: "summary_large_image",
       }}
       openGraph={{
         basic: {
           url: canonicalURL,
           type: "website",
-          title: `Astroship - Starter Template for Astro`,
+          title: "Oscar's Dev Blog",
           image: resolvedImageWithDomain,
         },
         image: {
-          alt: "Astroship Homepage Screenshot",
+          alt: "Oscar's Dev Blog Snapshot",
         },
       }}
     />
@@ -56,8 +56,23 @@ const makeTitle = title ? title : "Oscar's Dev Blog";
     <slot />
     <Footer />
     <style is:global>
-      /* Improve Page speed */
-      /* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+      a:not([class]) {
+        text-decoration-thickness: max(0.08em, 1px);
+        text-underline-offset: 0.15em;
+      }
+      :focus:visible {
+        --outline-size: max(2px, 0.15em);
+        --outline: var(--outline-width, var(--outline-size))
+          var(--outline-style, solid) var(--outline-color, currentColor);
+        --outline-offset: var(--outline-offset, var(--outline-size));
+      }
+      :target {
+        scroll-padding-block-start: 2rem;
+      }
+      :focus {
+        scroll-padding-block-end: 8vh;
+      }
+
       img {
         content-visibility: auto;
       }
