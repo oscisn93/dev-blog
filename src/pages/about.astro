@@ -13,7 +13,7 @@ const teamMemberEntry = (await getCollection("profile"))[0];
   <Container>
   {
     (
-      <div class="col-span-4 group">
+      <div class="col-span-12 md:col-span-4 group align-items-center pt-8">
         <div class="w-full aspect-square">
           <Picture
             src={teamMemberEntry.data.avatar.src}
@@ -47,9 +47,9 @@ const teamMemberEntry = (await getCollection("profile"))[0];
     </Fragment>
   </Sectionhead>
 
-  <div class="bg-zinc-900 bg-opacity-35 p-8 rounded rounded-md col-span-12 mt-2">
-    <h2 class="font-bold text-3xl">My Journey in Computer Science</h2>
-    <p class="p-3 text-lg leading-relaxed text-slate-400">
+  <div class="bg-zinc-900 bg-opacity-35 p-8 rounded rounded-md mx-auto col-span-12 mt-2">
+    <h2 class="font-bold text-center text-xl sm:text-3xl">My Journey </h2>
+    <p class="p-3 sm:text-lg leading-relaxed text-blue-600">
       Throughout my computer science education, I have sought to not only learn
       the course material but to apply the skills and industry relevant
       knowledge to different domains through software projects as well as
@@ -62,4 +62,5 @@ const teamMemberEntry = (await getCollection("profile"))[0];
       perform a better job and make the best possible end product!
     </p>
   </div>
+  </Container>
 </Layout>

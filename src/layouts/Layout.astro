@@ -63,7 +63,7 @@ const makeTitle = title ? title : "Oscar's Dev Blog";
       :focus:visible {
         --outline-size: max(2px, 0.15em);
         --outline: var(--outline-width, var(--outline-size))
-          var(--outline-style, solid) var(--outline-color, currentColor);
+          var(--outline-style, solid) var(--outline-color, currentcolor);
         --outline-offset: var(--outline-offset, var(--outline-size));
       }
       :target {
@@ -89,6 +89,10 @@ const makeTitle = title ? title : "Oscar's Dev Blog";
           #000,
           #000
         );
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        min-height: 100vh;
         color: #fff;
         font-weight: 700;
       }
