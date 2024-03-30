@@ -6,15 +6,14 @@ import Description from "@components/description.astro";
 const projects = [
   {
     name: "Focal",
-    price: "Productivity",
-    popular: true,
+    category: "Productivity",
+    completed: false,
     features: [
       "Schedule calendar",
       "Project Tracking",
       "Pomodoro Timer",
       "User Dashboard",
-      "Google Oauth Integration",
-      "Open Source",
+      "Auth0 Oauth Integration"
     ],
     button: {
       text: "Demo",
@@ -23,15 +22,14 @@ const projects = [
   },
   {
     name: "Starred",
-    price: "Productivity",
-    popular: true,
+    category: "Parenting/Mentoring",
+    completed: true,
     features: [
-      "",
-      "Project Tracking",
-      "Pomodoro Timer",
-      "User Dashboard",
-      "Google Oauth Integration",
-      "Open Source",
+      "Role-based Access Controls",
+      "Goal Setting",
+      "Reward System",
+      "Firestore Integration",
+      "Firebase Auth Integration",
     ],
     button: {
       text: "Demo",
@@ -40,15 +38,14 @@ const projects = [
   },
   {
     name: "Focal",
-    price: "Productivity",
-    popular: false,
+    category: "Productivity",
+    completed: false,
     features: [
       "Schedule calendar",
       "Project Tracking",
       "Pomodoro Timer",
       "User Dashboard",
       "Google Oauth Integration",
-      "Open Source",
     ],
     button: {
       text: "Demo",
@@ -57,15 +54,14 @@ const projects = [
   },
   {
     name: "Focal",
-    price: "Productivity",
-    popular: false,
+    category: "Productivity",
+    completed: false,
     features: [
       "Schedule calendar",
       "Project Tracking",
       "Pomodoro Timer",
       "User Dashboard",
       "Google Oauth Integration",
-      "Open Source",
     ],
     button: {
       text: "Demo",
@@ -74,15 +70,14 @@ const projects = [
   },
   {
     name: "Focal",
-    price: "Productivity",
-    popular: false,
+    category: "Productivity",
+    completed: false,
     features: [
       "Schedule calendar",
       "Project Tracking",
       "Pomodoro Timer",
       "User Dashboard",
       "Google Oauth Integration",
-      "Open Source",
     ],
     button: {
       text: "Demo",
@@ -90,27 +85,43 @@ const projects = [
     },
   },
   {
-    name: "Focal",
-    price: "Productivity",
-    popular: false,
+    name: "BinaryTreeCalculator",
+    category: "Productivity",
+    completed: false,
     features: [
-      "Schedule calendar",
-      "Project Tracking",
-      "Pomodoro Timer",
-      "User Dashboard",
-      "Google Oauth Integration",
-      "Open Source",
+      "Seperation of Concerns",
+      "Object Oriented Programming",
+      "Binary Tree Data Structure",
+      "C++ Standard Library",
+      "Documentation",
     ],
     button: {
-      text: "Demo",
-      link: "/project",
+      text: "Github",
+      link: "https://github.com/oscisn93/binary_tree_calculator",
+    },
+  },
+  {
+    name: "BinaryTreeCalculator",
+    category: "Productivity",
+    completed: false,
+    features: [
+      "Seperation of Concerns",
+      "Object Oriented Programming",
+      "Binary Tree Data Structure",
+      "C++ Standard Library",
+      "Documentation",
+    ],
+    button: {
+      text: "Github",
+      link: "https://github.com/oscisn93/binary_tree_calculator",
     },
   },
 ];
+
 ---
 
 <Layout title="Projects">
   <Container>
-    {projects.map((item) => <Description plan={item} />)}
+    {projects.map((item) => <Description project={item} />)}
   </Container>
 </Layout>
