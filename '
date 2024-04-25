@@ -11,13 +11,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body>
     <Header />
+    <div class="hero">
+        <img src="https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTcxNDAyODIwNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" alt="Developer" />
+		</div>
     <main>
 		<section id="about">
-      <img class="hero" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTcxNDAyODIwNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" alt="Developer" />
-			<div class="welcome-card">
-        <h2><p>Welcome to my </p><br /> Developer <p>Porfolio</p></h2>
+			<div>
+        <h2><p>Welcome to my </p><br /> Dev <p>Porfolio</p></h2>
       </div>
       <div class="about-card">
+        <h4>About Me</h4>
         <p>
           Hello, my name is <stron>Oscar</strong>, and I am a <strong>Software Developer</strong> based out of <strong>LA Metro Area</strong>, California.
           I have a passion for software development and applying software engineering tools and practices to solving problems and delivering quality applications,
@@ -29,6 +32,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           I am always looking to learn new things and improve my skills as a developer.
         </p>
         </div>
+			</div>
 		</section>
 		<section id="projects">
 			<h2>Projects</h2>
@@ -107,39 +111,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
     </main>
     <style>
       .hero {
-        position: absolute;
-        min-width: 100%;
-        max-height: 36rem;
-        object-fit: cover;
-        z-index: 0;
+        aspect-ratio: 16 / 9;
       }
+
       #about {
-        z-index: 1;
+        position: absolute;
+      }
+      #about div {
         display: flex;
-        flex-direction: column;
-      }
-      .welcome-card {
-        z-index: 1;
-        align-self: start;
-        margin: 2rem 2rem 0 2rem;
-      }
-      .welcome-card h2 {
-        min-width: 18rem;
-        background-color: var(--primary);
-        padding: 3rem;
-        border-radius: 0.5rem;
-        border: 0.25rem solid var(--contrast);
+        gap: 1rem;
       }
       .about-card {
-        align-self: end;
-        margin: 0 2rem;
-        z-index: 1;
-        padding: 3rem;
-        max-width: 32rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0 2rem 2rem;
+        max-width: 50rem;
         background-color: var(--secondary);
         color: var(--white);
         border-radius: 0.5rem;
         border: 0.2rem solid var(--secondary-accent);
+        box-shadow: 1rem 1rem 0rem rgba(0, 0, 0, 0.25);
+      }
+      #about h2 {
+        min-width: 12rem;
+        align-self: center;
+        background-color: var(--black);
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 0.25rem solid var(--primary-accent);
+        box-shadow: 1rem 1rem 0rem rgba(0, 0, 0, 0.25);
+        margin-right: 2rem;
       }
       #about h2 p:first-child() {
         font-size: 1.5rem;
@@ -164,7 +165,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         margin: 0;
       }
       #projects {
-        margin: 0 2rem;
         background-color: var(--black);
         margin-top: 1.5rem;
         color: var(--primary);
@@ -175,8 +175,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       }
       .projects-container {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+        gap: 1.5rem;
       }
       .project-card {
         background-color: var(--secondary);
