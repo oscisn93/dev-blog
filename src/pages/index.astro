@@ -57,18 +57,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					</p>
 				</div>
 				<div class="project-card">
-					<h3>Got2Go</h3>
+					<h3>TranscendCare</h3>
 					<p>
-						An Android mobile app that helps users find the nearest public restroom.
-						Users can find information such as accessibility, cleanliness, and more.
-						Built with <strong>Kotlin</strong>, <strong>Mapbox API</strong>, and <strong>Firebase</strong>.
+            A web application that connects transgender and transitioning users with healthcare
+            providers and allows users to give feedback about specific treatments received.
+						Built with <strong>TypeScript</strong>, <strong>Next.JS</strong>, <strong>Mapbox API</strong>, and <strong>PostrgreSQL</strong>.
 					</p>
 				</div>
 				<div class="project-card">
-					<h3>Pokemon Egg Hunt</h3>
+					<h3>Focal</h3>
 					<p>
-						A Pokemon themed browser game where the user can find Pokemon eggs and hatch them.
-						Built with <strong>Deno</strong> and <strong>TypeScript</strong>, and published with <strong>Deno Deploy</strong>.
+            A productivity web application that allows users to create tasks, organized with projects
+            and represented as events on a calendar. Events can then be completed and moved around.
+						Built with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Flask</strong>.
 					</p>
 				</div>
 				<div class="project-card">
@@ -114,6 +115,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         z-index: 0;
       }
       #about {
+        font-weight: 200;
         z-index: 1;
         display: flex;
         flex-direction: column;
@@ -142,7 +144,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         border: 0.2rem solid var(--secondary-accent);
       }
       #about h2 p:first-child() {
-        font-size: 1.5rem;
         display: inline;
         color: var(--white);
       }
@@ -151,7 +152,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         color: var(--contrast);
       }
       .card h4 {
-        font-size: 1.25rem;
         font-weight: 800;
         margin: 0;
         padding-top: 1rem;
