@@ -1,2 +1,2 @@
-export const SITE_TITLE = "Oscar Cisneros";
-export const SITE_DESCRIPTION = "Welcome to my personal website!";
+export const SITE_TITLE = "OscarCisneros.Dev";
+export const SITE_DESCRIPTION = "Welcome to my Developer Portfolio!";
