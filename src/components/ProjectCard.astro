@@ -1,0 +1,17 @@
+---
+type Project = {
+  name: string;
+  url: string;
+  description: string;
+  technologies: string[];
+}
+
+const { project } = Astro.props as { project: Project; }
+---
+
+<div class="flex flex-col gap-2  p-2 rounded-md border-2 border-slate-400 items-center max-w-[300px] bg-blue-900">
+  <h3>{project.name}</h3>
+  <img class="h-[150px]" src={project.url} alt={`${project.name} official logo`}>
+  <p class="text-sm p-2 font-normal">{project.description}</p>
+  <p class="text-sm font-semibold">Built using: {project.technologies.join(', ')}
+</div>

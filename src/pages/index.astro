@@ -1,7 +1,50 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+type Project = {
+  name: string;
+  url: string;
+  description: string;
+  technologies: string[];
+}
+
+const projects: Project[] = [
+  {
+    name: 'Got2Go',
+    url: 'g2g-logo.png',
+    description: 'An Android mobile app that helps users find the nearest public restroom. Users can find information such as accessibility, cleanliness, and more.',
+    technologies: ['Kotlin', 'Mapbox API', 'Firebase']
+  },
+  {
+    name: 'PokemonEggHunt',
+    url: 'pokemon-egg-hunt.png',
+    description: 'A Pokemon themed browser game where the user can find Pokemon eggs and hatch them.',
+    technologies: ['Deno', 'TypeScript', 'DenoDeploy', 'Firebase Realtime DB']
+  },
+  {
+    name: 'Starred',
+    url: 'loginImage.jpg',
+    description: 'An reward system app that allows users to earn points and redeem them for rewards. Made for parents and other role models to encourage positive behavior in children.',
+    technologies: ['React', 'TypeScript', 'Firebase']
+  },
+  {
+    name: 'TranscendCare',
+    url: 'logo.svg',
+    description: 'A web application that connects transgender and transitioning users with healthcare providers and allows users to give feedback about specific treatments received.',
+    technologies: ['TypeScript', 'Next.js', 'Mapbox API', 'PostrgreSQL']
+  },
+  {
+    name: 'Focal',
+    url: 'temp.png',
+    description: 'A productivity web application that allows users to create tasks, organized with projects and represented as events on a calendar. Events can then be completed and moved around.',
+    technologies: ['React', 'TypeScript', 'Redux', 'Flask']
+  }
+
+];
 ---
 
 <!doctype html>
@@ -11,193 +54,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   </head>
   <body>
     <Header />
-    <main class="content">
-		<section id="about">
-      <img class="hero" src="https://images.unsplash.com/photo-1605379399642-870262d3d051?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8ZGV2ZWxvcGVyfHx8fHx8MTcxNDAyODIwNw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" alt="Developer" />
-			<div class="welcome-card">
-        <h2><p>Welcome to my </p><br /> Developer <p>Porfolio</p></h2>
-      </div>
-      <div class="about-card">
-        <p>
-          Hello, my name is <stron>Oscar</strong>, and I am a <strong>Software Developer</strong> based out of <strong>LA Metro Area</strong>, California.
-          I have a passion for software development and applying software engineering tools and practices to solving problems and delivering quality applications,
-          APIs, and services! I have experience with a wide range of technologies due to an endless curiosity and a desire to learn and try new things no matter how challenging they may be!
-        </p>
-        <p>
-          I have experience working with a variety of programming languages and technologies including:
-          <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>Python</strong>, <strong>Go</strong>, <strong>C</strong>, <strong>C++</strong>, and <strong>Rust</strong>.
-          I am always looking to learn new things and improve my skills as a developer. My ideal role would be in web development- particularly in backend engineering, although I am also
-          interested in frontend, fullstack, mobile, and devops.
-        </p>
+    <main class="bg-zinc-900 flex flex-col w-full">
+      <HeroSection />      
+      <section class="flex flex-col p-2 text-lg font-semibold text-slate-200">
+        <h2>Projects</h2>
+        <div class="flex flex-wrap gap-2 p-3">
+          {projects.map(project => <ProjectCard project={project} />)}
         </div>
-		</section>
-		<section id="projects">
-			<h2>Projects</h2>
-			<div class="projects-container">
-				<div class="project-card">
-					<h3>Got2Go</h3>
-          <img class="project-logo" src="g2g-logo.png" alt="Got2Go-logo">
-					<p>
-						An Android mobile app that helps users find the nearest public restroom.
-						Users can find information such as accessibility, cleanliness, and more.
-						Built with <strong>Kotlin</strong>, <strong>Mapbox API</strong>, and <strong>Firebase</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Pokemon Egg Hunt</h3>
-          <img class="project-logo" src="pokemon-egg-hunt.png" alt="Got2Go-logo">
-					<p>
-						A Pokemon themed browser game where the user can find Pokemon eggs and hatch them.
-						Built with <strong>Deno</strong> and <strong>TypeScript</strong>, and published with <strong>Deno Deploy</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Starred</h3>
-          <img class="project-logo" src="loginImage.jpg" alt="Got2Go-logo">
-					<p>
-						An reward system app that allows users to earn points and redeem them for rewards.
-						Made for parents and other role models to encourage positive behavior in children.
-						Built with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Firebase</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>TranscendCare</h3>
-          <img class="project-logo" src="logo.svg" alt="Got2Go-logo">
-					<p>
-            A web application that connects transgender and transitioning users with healthcare
-            providers and allows users to give feedback about specific treatments received.
-						Built with <strong>TypeScript</strong>, <strong>Next.JS</strong>, <strong>Mapbox API</strong>, and <strong>PostrgreSQL</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Focal</h3>
-					<p>
-            A productivity web application that allows users to create tasks, organized with projects
-            and represented as events on a calendar. Events can then be completed and moved around.
-						Built with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Flask</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Starred</h3>
-					<p>
-						An reward system app that allows users to earn points and redeem them for rewards.
-						Made for parents and other role models to encourage positive behavior in children.
-						Built with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Firebase</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Got2Go</h3>
-					<p>
-						An Android mobile app that helps users find the nearest public restroom.
-						Users can find information such as accessibility, cleanliness, and more.
-						Built with <strong>Kotlin</strong>, <strong>Mapbox API</strong>, and <strong>Firebase</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Pokemon Egg Hunt</h3>
-					<p>
-						A Pokemon themed browser game where the user can find Pokemon eggs and hatch them.
-						Built with <strong>Deno</strong> and <strong>TypeScript</strong>, and published with <strong>Deno Deploy</strong>.
-					</p>
-				</div>
-				<div class="project-card">
-					<h3>Starred</h3>
-					<p>
-						An reward system app that allows users to earn points and redeem them for rewards.
-						Made for parents and other role models to encourage positive behavior in children.
-						Built with <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Firebase</strong>.
-					</p>
-				</div>
-			</div>
-		</section>
+      </section>
     </main>
-    <style>
-      .content {
-        width: 1200px;
-      }
-      .hero {
-        position: absolute;
-        min-width: 100%;
-        max-height: 36rem;
-        object-fit: cover;
-        z-index: 0;
-      }
-      #about {
-        font-weight: 200;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-      }
-      .welcome-card {
-        z-index: 1;
-        align-self: start;
-        margin: 2rem 2rem 0 2rem;
-      }
-      .welcome-card h2 {
-        min-width: 18rem;
-        background-color: var(--primary);
-        padding: 3rem;
-        border-radius: 0.5rem;
-        border: 0.25rem solid var(--contrast);
-      }
-      .about-card {
-        align-self: end;
-        margin: 0 2rem;
-        z-index: 1;
-        padding: 3rem;
-        max-width: 32rem;
-        background-color: var(--secondary);
-        color: var(--white);
-        border-radius: 0.5rem;
-        border: 0.2rem solid var(--secondary-accent);
-      }
-      #about h2 p:first-child() {
-        display: inline;
-        color: var(--white);
-      }
-      #about h2 p:last-child() {
-        display: inline;
-        color: var(--contrast);
-      }
-      .card h4 {
-        font-weight: 800;
-        margin: 0;
-        padding-top: 1rem;
-      }
-      .card p {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.5rem;
-        display: inline-block;
-        margin: 0;
-      }
-      #projects {
-        margin: 0 2rem 2rem;
-        background-color: var(--black);
-        margin-top: 1.5rem;
-        color: var(--white);
-        padding: 0 3rem 3rem;
-        border-radius: 0.5rem;
-        border: 0.2rem solid var(--primary-accent);
-        box-shadow: 1rem 1rem 0rem rgba(0, 0, 0, 0.25);
-      }
-      .projects-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-        gap: 1.5rem;
-      }
-      .project-card {
-        background-color: var(--secondary);
-        color: var(--white);
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        border: .2rem solid var(--secondary-accent);
-        text-align: center;
-      }
-      .project-logo {
-        background-color: var(--white);
-        height: 40%;
-      }
-    </style>
   </body>
 </html>
