@@ -9,7 +9,7 @@ type Project = {
 const { project } = Astro.props as { project: Project; }
 ---
 
-<div class="flex flex-col gap-2  p-2 rounded-md border-2 border-slate-400 items-center max-w-[300px] bg-blue-900">
+<div class="flex flex-col gap-2  p-2 rounded-md border-2 border-slate-400 items-center max-w-[300px] h-[400px] bg-blue-900">
   <h3>{project.name}</h3>
   <img class="h-[150px]" src={project.url} alt={`${project.name} official logo`}>
   <p class="text-sm p-2 font-normal">{project.description}</p>
