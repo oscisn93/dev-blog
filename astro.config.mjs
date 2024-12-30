@@ -1,12 +1,9 @@
-import { defineConfig } from "astro/config";
-import mdx from "@astrojs/mdx";
-
-import sitemap from "@astrojs/sitemap";
+import { defineConfig } from 'astro/config';
 
 import tailwind from "@astrojs/tailwind";
+import mdx from "@astrojs/mdx";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://desktop.gentoo-betta.ts.net/portfolio",
-  integrations: [mdx(), sitemap(), tailwind()],
+  site: "http://localhost:4321",
+  integrations: [tailwind(), mdx()],
 });

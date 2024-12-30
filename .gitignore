@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# key_gen files
+.crypto
+
 # macOS-specific files
 .DS_Store
 
