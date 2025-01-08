@@ -1,17 +1,15 @@
 ---
-type Project = {
-  name: string;
-  url: string;
-  description: string;
-  technologies: string[];
-}
-
+import type { Project } from "../lib/constants.ts";
 const { project } = Astro.props as { project: Project; }
 ---
 
-<div class="flex flex-col gap-2  p-2 rounded-md border-2 border-slate-400 items-center max-w-[300px] h-[400px] bg-blue-900">
-  <h3>{project.name}</h3>
-  <img class="h-[150px]" src={project.url} alt={`${project.name} official logo`}>
-  <p class="text-sm p-2 font-normal">{project.description}</p>
-  <p class="text-sm font-semibold">Built using: {project.technologies.join(', ')}
+<div class="flex flex-col items-center justify-center gap-2 rounded-md border-2 border-emerald-400 items-center max-w-[440px] min-h-[640px] bg-emerald-600 font-semibold">
+  <h1 class="w-[90%] text-center text-emerald-400 font-extrabold text-3xl bg-emerald-800 bg-opacity-70 px-2 border-2 border-emerald-900 rounded-sm">{project.name}</h1>
+  <img class="h-[200px] max-w-[80%] rounded-sm" src={project.url} alt={`${project.name} official logo`} title={`${project.name} official logo`}>
+  <div class="flex flex-col gap-2 bg-gradient-to-b from-stone-950 to-emerald-950 bg-opacity-80 border-2 border-emerald-700 rounded-sm py-4 px-2 text-m w-[95%] h-[320px]">
+    <h2 class="text-emerald-300 font-extrabold text-lg">What's it about?</h2>
+    <p class="text-emerald-100 py-2">{project.description}</p>
+    <h2 class="text-emerald-300 font-extrabold text-lg">What was this built with?</h2>
+    <p>Built using: {project.technologies.join(', ')}
+  </div>
 </div>
